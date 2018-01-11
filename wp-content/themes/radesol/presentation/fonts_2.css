@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+/*
+font-family: 'Roboto', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+
+@font-face {
+font-family: arialnarrow; 
+src: url(ARIALN.TTF);
+}
+@font-face {
+font-family: OpenSansBold; 
+src: url(OpenSans-Bold.ttf);
+}
+@font-face {
+font-family: OpenSansBoldItalic; 
+src: url(OpenSans-BoldItalic.ttf);
+}
+@font-face {
+font-family: OpenSansItalic; 
+src: url(OpenSans-Italic.ttf);
+}
+@font-face {
+font-family: OpenSansLight; 
+src: url(OpenSans-Light.ttf);
+}
+@font-face {
+font-family: OpenSansLightItalic; 
+src: url(OpenSans-LightItalic.ttf);
+}
+@font-face {
+font-family: OpenSans;
+src: url(OpenSans-Regular.ttf);
+}
