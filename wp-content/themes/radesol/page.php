@@ -3,109 +3,9 @@
 
         
 <div class="page no_column  blog">
-
-
-     <div class="content">
-
-      <div class="sitename"> </div> <span class="descr"><?php bloginfo('description'); ?></span>
-      <div class="top_line">
-         <div id="menu_2" class="simple_menu"> <?php wp_nav_menu( array( 'theme_location' => 'm2', 'fallback_cb' => false ) ); ?> </div> 
-      </div> <!-- class="top_line" -->    
-
-  
+ 
     <?php // main content ?> <?php if(have_posts()) : while(have_posts()) : the_post(); ?>  
     
-  
-
-        <?php 
-        $wide_slider = 1; // 0 - normal slider, 1 - wide slider 
-       
-        $sl_posts_args = array (
-            'post_type'   => 'any', // 'post';  'any' - усі типи 
-            'posts_per_page' => 30, // -1 
-            'meta_key' => 'show_in_main_slider',
-            'meta_value' => '1',
-            // 'order' => 'DESC',   
-            // 'orderby' => 'date', // 'title'
-            'post_status' => 'publish'
-        );
-        $my_query_2 = new WP_Query($sl_posts_args);
-        if( $my_query_2->have_posts() ) { ?>
-        
-    
-    
-    <script type="text/javascript">
-        window.addEventListener("DOMContentLoaded", function() { // after jQuery is loaded async. 
-    jQuery(document).ready(function($) {
-        
-        $('#main_slider_slides').slick({
-         slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          fade: true,
-      //asNavFor: '#slider-nav'
-        });
-        
-        $('#slider-nav').slick({
-      slidesToShow: 6,
-      slidesToScroll: 0,
-      arrows: false,
-      asNavFor: '#main_slider_slides',
-      //dots: true,
-      centerMode: false,
-      centerPadding: 0,
-      focusOnSelect: true
-    });
-    
-        $(".slide_more").click(function(){
-        var block_1 = $(this);
-            $(".slide").not(".slick-active").removeClass("my-active_slide");
-            block_1.closest(".slide").toggleClass("my-active_slide");
-            //block_1.html(block_1.text() == "<?php _e('Read more') ?>" ? "<?php _e('Close') ?>" : "<?php _e('Read more') ?>");
-        }); 
-    
-    });
-    
-        }, false); // __ after jQuery is loaded
-    </script>
-    
-    <div class="main_slider<?php if($wide_slider == 1) { ?> wide_slider<?php } ?>">   <!-- ... main_slider wide_slider -->           
-    <div class="cycle_slider">
-        <div class="items" id="main_slider_slides">
-            <?php $num_1 = 0; ?>
-            <?php while ($my_query_2->have_posts()) : 
-            $num_1++;
-            $my_query_2->the_post(); 
-            global $more;  $more = 0; 
-            ?>        
-
-            <?php if ( has_post_thumbnail() ) { ?>
-            <div class="slide" <?php if($num_1 == 1) { ?>style="display:block;"<?php } ?>>
-            <div class="dark_slide"> 
-            <div class="slide_thumb">
-            <?php $thumb_id = get_post_thumbnail_id(); 
-             if($wide_slider == 1) { echo '<div class="wide_img">'.salas_image_resize($thumb_id, 1920, 600).'</div>'; }
-            ?>
-            </div>
-
-                <div class="post_text">
-                    <?php the_content(); ?>
-                </div>
-
-            </div> 
-            </div>
-            <?php } ?> 
-            <?php endwhile; ?>
-        </div>        
-     </div> 
-        
- </div> <!-- main_slider -->
-
-        
-
-<?php } wp_reset_query(); ?>
-
- 
   
     <div class="page_title title_content"><h1><?php the_title(); ?></h1></div>
 	
@@ -116,8 +16,16 @@
     <div class="box-content main-descr maine">
     <div class="entry-content"> <?php the_content(); ?> </div>
     </div>
-           
+      <div class="sitename"> </div> <span class="descr"><?php bloginfo('description'); ?></span> 
+      <div class="content">
+
+
+      <div class="top_line">
+         <div id="menu_2" class="simple_menu"> <?php wp_nav_menu( array( 'theme_location' => 'm2', 'fallback_cb' => false ) ); ?> </div> 
+      </div> <!-- class="top_line" -->              
  
+
+
 <?php /* Показати дод. поле сторінки */ ?>
 <?php /* 
 <?php // короткий варіант // $short_descr = apply_filters('the_title', get_post_meta($post->ID, 'short_description', true));
