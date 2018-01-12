@@ -91,33 +91,23 @@ $image_25_src = $thumb_arr25[0];
 					</div>
 		    </div>
 
-
-
-
-						<div class="block logo" id="header-logo"> 
-							<?php // get_header_image(); ?>
-                            <a class="log_img" href="<?php bloginfo('url'); ?>"><img src="<?php echo $logo_src ?>" alt="Logo" <?php /* width, height */ ?> /></a> 							
+						<div class="block logo" id="header-logo"> 							
+	           <a class="log_img" href="<?php bloginfo('url'); ?>"><img src="<?php echo $logo_src ?>" alt="Logo" <?php /* width, height */ ?> /></a>
+	           <div class="left-shadow"></div>
+             <div class="right-shadow"></div>
+						</div>     
+						<div class="contacts"> 
+							<?php // contacts image ?>
+              <img src="<?php echo get_template_directory_uri().'/images/contacts.png'?>" alt="Logo" <?php /* width, height */ ?> /></a> 					
+              <?php dynamic_sidebar( 'sidebar-contact' ); ?>
+              <div class="left-shadow"></div>
+              <div class="right-shadow"></div>
 						</div>     
 
-
-						<div class="block" id="sidebar-contact"> 
-							<?php dynamic_sidebar( 'sidebar-contact' ); ?>							
-						</div> 
-
-				
-				<div class="sitename"> </div> <span class="descr"><?php bloginfo('description'); ?></span>
-
-				<div class="top_line">
-					<div id="menu_2" class="simple_menu"> <?php wp_nav_menu( array( 'theme_location' => 'm2', 'fallback_cb' => false ) ); ?> </div> 
-				</div> <!-- class="top_line" --> 	
-
-			</div>      
 		</div> <!-- top-conteiner -->
+
+		
 
 	</header>        
 
-  
-
-			
-	<div class="page-content<?php if(!is_front_page() and !is_page_template('template-landing.php')) { ?> wrapper-cont<?php } ?>"> 
-
+	<div class="page-content wrapper-cont"> 

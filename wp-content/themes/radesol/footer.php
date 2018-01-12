@@ -197,10 +197,10 @@ $(".top_menu li.menu-item-has-children > a").click(function() { <?php /* Від�
 $(".top_menu ul.menu li").hover(
 	function () {
 		// $(this).children(".sub-menu").removeClass("hide");
-		$(this).children(".sub-menu").delay(500).slideDown(400); // show(400)
+		$(this).children(".sub-menu").delay(200).slideDown(400); // show(400)
     },  
 	function () {
-		$(this).children(".sub-menu").stop(true, true).delay(500).hide(0);		
+		$(this).children(".sub-menu").stop(true, true).delay(2000).hide(400);		
 		// $(this).children(".sub-menu").addClass("hide");
     }  
 );
